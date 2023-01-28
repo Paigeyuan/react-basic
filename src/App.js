@@ -5,14 +5,12 @@ import MyCard from './MyCard'
 function App() {
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch('https://https://www.melivecode.com/api/attractions')
+    fetch('https://www.melivecode.com/api/attractions')
     .then(res => res.json())
     .then((result) => {
-
     setData(result)
     })
   }, [])
-
   return (
     <div>
     <MyBar name="Me App" />
