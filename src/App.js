@@ -6,12 +6,12 @@ function App() {
   const [data, setData] = useState([])
   useEffect(() => {
     fetch('https://https://www.melivecode.com/api/attractions')
-      .then(res.json())
-      
-    setData([
-    ])
-  }, [])
+    .then(res => res.json())
+    .then((result) => {
 
+    setData(result)
+    })
+  }, [])
 
   return (
     <div>
@@ -19,7 +19,12 @@ function App() {
     <MyCard />
     <h1>Hello DIT, RSU</h1>
     {data.map(item => (
-        <MyCard key={item.id} name={item.name} />
+        <MyCard 
+          key={item.id} 
+          name={item.name} 
+          coverimage={item.coverimage}
+          detail={item.detail}
+        />
       ))}
     </div>
   )
