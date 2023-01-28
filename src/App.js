@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Grid } from '@mui/material'
 import MyBar from './MyBar'
 import MyCard from './MyCard'
 
@@ -16,14 +17,18 @@ function App() {
     <MyBar name="Me App" />
     <MyCard />
     <h1>Hello DIT, RSU</h1>
+    <Grid container spacing={2}>
     {data.map(item => (
+    <Grid item xs={12} md={4}>
         <MyCard 
           key={item.id} 
           name={item.name} 
           coverimage={item.coverimage}
           detail={item.detail}
         />
+        </Grid>
       ))}
+    </Grid>
     </div>
   )
 }
